@@ -1,0 +1,20 @@
+{
+  "welcomeFile": "/app/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/app/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    },
+    {
+      "source": "^/users",
+      "target": "/users",
+      "destination": "nodejs_api",
+      "authenticationType": "none"
+    }
+  ]
+}

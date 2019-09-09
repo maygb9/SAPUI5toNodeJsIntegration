@@ -1,0 +1,64 @@
+<mvc:View controllerName="app.app.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table id="idCreateEntry1" width="auto" class="sapUiResponsiveMargin" items="{ path: 'CreateModel>/arrayName' }" noDataText="No data"
+							mode="None" showSeparators="All">
+							<columns>
+								<Column width="20%">
+									<header>
+										<Label wrapping="true" text="Id" width="auto" required="true" design="Bold" textDirection="LTR"/>
+									</header>
+									<footer/>
+								</Column>
+								<Column width="20%">
+									<header>
+										<Label wrapping="true" text="First Name" required="true" width="auto" design="Bold" textDirection="LTR"/>
+									</header>
+									<footer/>
+								</Column>
+								<Column width="20%">
+									<header>
+										<Label wrapping="true" text="Last Name" width="auto" required="true" design="Bold" textDirection="LTR"/>
+									</header>
+									<footer/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{CreateModel>id}"/>
+										<Text text="{CreateModel>firstname}"/>
+										<Text text="{CreateModel>lastname}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+					
+					
+					<footer>
+			<Bar design="Auto">
+				<contentLeft/>
+				<contentMiddle/>
+				<contentRight>
+					<Button text="Generate" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="onGeneratePress"/>
+					<Button text="Create New" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="onSubmitPress"/>
+					<!--	<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onCancelPress"/>-->
+					
+				</contentRight>
+			</Bar>
+		</footer>
+					
+					
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,41 @@
+ID: calldestinationfromUI5
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: nodejs
+    type: nodejs
+    path: nodejs
+    provides:
+      - name: nodejs_api
+        properties:
+          url: '${default-url}'
+  - name: app
+    type: html5
+    path: app
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    build-parameters:
+      builder: grunt
+    requires:
+      - name: uaa_calldestinationfromUI5
+      - name: dest_calldestinationfromUI5
+      - name: nodejs_api
+        group: destinations
+        properties:
+          name: nodejs_api
+          url: '~{url}'
+          strictSSL: false
+          forwardAuthToken: true
+resources:
+  - name: uaa_calldestinationfromUI5
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_calldestinationfromUI5
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

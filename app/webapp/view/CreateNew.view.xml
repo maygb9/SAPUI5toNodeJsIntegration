@@ -1,0 +1,20 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.app.controller.CreateNew"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title">
+				<content>
+					
+						<Label text="First Name"/>
+						<Input id="FirstName" type="Text" placeholder="Enter First Name ..." ></Input>
+						<Label text="Last Name"/>
+						<Input id="LastName" type="Text" placeholder="Enter Last Name ..." ></Input>
+					<Button text="Create" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onCreatePress"/>
+						<Button text="Back" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="onBackPress"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
